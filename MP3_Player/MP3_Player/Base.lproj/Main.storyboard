@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wM2-PH-0Qh">
+                                <rect key="frame" x="59" y="75.666666666666657" width="275" height="272"/>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wM2-PH-0Qh" secondAttribute="height" multiplier="1:1" id="mPp-iO-DCT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-gG-c4h">
+                                <rect key="frame" x="142" y="535.66666666666663" width="109" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KzO-gG-c4h" secondAttribute="height" multiplier="1:1" id="SWq-nM-3Cg"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ml-Hy-7R9">
+                                <rect key="frame" x="3" y="535.66666666666663" width="109" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7ml-Hy-7R9" secondAttribute="height" multiplier="1:1" id="UDw-Ch-MyT"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="backward.end" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-pg-tEz">
+                                <rect key="frame" x="281" y="535.66666666666663" width="109" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RXs-pg-tEz" secondAttribute="height" multiplier="1:1" id="MfK-xx-wzC"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="forward.end" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
+                                </buttonConfiguration>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-Vx-JZ2">
+                                <rect key="frame" x="14" y="455.66666666666669" width="365" height="31"/>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutorName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-VL-xG3">
+                                <rect key="frame" x="16" y="415.33333333333331" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-hm-ugz">
+                                <rect key="frame" x="16" y="379" width="361" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.54334990530303029" green="0.27019983229503669" blue="0.10104659746488857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QRa-Vx-JZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2zV-TA-fI0"/>
+                            <constraint firstItem="QRa-Vx-JZ2" firstAttribute="top" secondItem="1OM-VL-xG3" secondAttribute="bottom" constant="20" id="72h-Uh-IB3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1OM-VL-xG3" secondAttribute="trailing" constant="16" id="9gu-HE-cjM"/>
+                            <constraint firstItem="RXs-pg-tEz" firstAttribute="leading" secondItem="KzO-gG-c4h" secondAttribute="trailing" constant="30" id="Kgg-hF-jGh"/>
+                            <constraint firstItem="1OM-VL-xG3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LKD-Sk-PCX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EiS-hm-ugz" secondAttribute="trailing" constant="16" id="LRd-Pn-zz0"/>
+                            <constraint firstItem="KzO-gG-c4h" firstAttribute="top" secondItem="QRa-Vx-JZ2" secondAttribute="bottom" constant="50" id="MGt-4L-kQY"/>
+                            <constraint firstItem="RXs-pg-tEz" firstAttribute="centerY" secondItem="KzO-gG-c4h" secondAttribute="centerY" id="P0V-D4-cZY"/>
+                            <constraint firstItem="RXs-pg-tEz" firstAttribute="height" secondItem="KzO-gG-c4h" secondAttribute="height" id="VNW-wU-bWY"/>
+                            <constraint firstItem="KzO-gG-c4h" firstAttribute="leading" secondItem="7ml-Hy-7R9" secondAttribute="trailing" constant="30" id="XBa-vT-TJr"/>
+                            <constraint firstItem="7ml-Hy-7R9" firstAttribute="centerY" secondItem="KzO-gG-c4h" secondAttribute="centerY" id="c1r-4G-6gv"/>
+                            <constraint firstItem="EiS-hm-ugz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cDw-Wh-2OY"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eLe-mk-Dux"/>
+                            <constraint firstItem="EiS-hm-ugz" firstAttribute="top" secondItem="wM2-PH-0Qh" secondAttribute="bottom" constant="30" id="goO-8F-IlU"/>
+                            <constraint firstItem="7ml-Hy-7R9" firstAttribute="height" secondItem="KzO-gG-c4h" secondAttribute="height" id="iUN-uS-LlD"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="mox-oM-46b"/>
+                            <constraint firstItem="QRa-Vx-JZ2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sdA-fy-tjK"/>
+                            <constraint firstItem="KzO-gG-c4h" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="u9e-EQ-DMW"/>
+                            <constraint firstItem="7ml-Hy-7R9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="upM-qw-J91"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uqt-57-bgv"/>
+                            <constraint firstItem="1OM-VL-xG3" firstAttribute="top" secondItem="EiS-hm-ugz" secondAttribute="bottom" constant="10" id="zlK-ut-jpc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AuthorNameLabel" destination="1OM-VL-xG3" id="Jp6-Yg-5pZ"/>
+                        <outlet property="PlayTrackButton" destination="KzO-gG-c4h" id="0eV-OO-b9w"/>
+                        <outlet property="TrackBackButton" destination="7ml-Hy-7R9" id="Bsp-aR-775"/>
+                        <outlet property="TrackCoverUIImageView" destination="wM2-PH-0Qh" id="CLk-6f-RFl"/>
+                        <outlet property="TrackForwardButton" destination="RXs-pg-tEz" id="VU8-CV-99o"/>
+                        <outlet property="TrackNameLabel" destination="EiS-hm-ugz" id="VXc-Cc-pys"/>
+                        <outlet property="TrackTimeSlider" destination="QRa-Vx-JZ2" id="gJR-t7-amA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-413" y="-38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backward.end" catalog="system" width="128" height="120"/>
+        <image name="forward.end" catalog="system" width="128" height="120"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="play.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
