@@ -12,7 +12,7 @@
         <!--Player View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PlayerViewController" storyboardIdentifier="PlayerViewController" id="BYZ-38-t0r" customClass="PlayerViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,9 +32,12 @@
                                 <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onPlayButtonTuch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F9g-pi-nVb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ml-Hy-7R9">
                                 <rect key="frame" x="3" y="535.66666666666663" width="109" height="109"/>
@@ -63,6 +66,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-Vx-JZ2">
                                 <rect key="frame" x="14" y="455.66666666666669" width="365" height="31"/>
                                 <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <connections>
+                                    <action selector="changeValueSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="mc0-EE-jXI"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutorName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-VL-xG3">
                                 <rect key="frame" x="16" y="415.33333333333331" width="361" height="20.333333333333314"/>
@@ -105,24 +111,24 @@
                     </view>
                     <connections>
                         <outlet property="AuthorNameLabel" destination="1OM-VL-xG3" id="Jp6-Yg-5pZ"/>
-                        <outlet property="PlayTrackButton" destination="KzO-gG-c4h" id="0eV-OO-b9w"/>
                         <outlet property="TrackBackButton" destination="7ml-Hy-7R9" id="Bsp-aR-775"/>
-                        <outlet property="TrackCoverUIImageView" destination="wM2-PH-0Qh" id="CLk-6f-RFl"/>
                         <outlet property="TrackForwardButton" destination="RXs-pg-tEz" id="VU8-CV-99o"/>
                         <outlet property="TrackNameLabel" destination="EiS-hm-ugz" id="VXc-Cc-pys"/>
-                        <outlet property="TrackTimeSlider" destination="QRa-Vx-JZ2" id="gJR-t7-amA"/>
+                        <outlet property="playTrackButton" destination="KzO-gG-c4h" id="LUg-Bv-UiA"/>
+                        <outlet property="trackCoverUIImageView" destination="wM2-PH-0Qh" id="aQZ-MT-OYC"/>
+                        <outlet property="trackTimeSlider" destination="QRa-Vx-JZ2" id="emf-a3-KkL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-413" y="-38"/>
+            <point key="canvasLocation" x="-1219" y="-32"/>
         </scene>
     </scenes>
     <resources>
         <image name="backward.end" catalog="system" width="128" height="120"/>
         <image name="forward.end" catalog="system" width="128" height="120"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
         <image name="play.square.fill" catalog="system" width="128" height="114"/>
+        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
