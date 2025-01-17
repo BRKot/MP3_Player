@@ -50,6 +50,9 @@
                                     <imageReference key="image" image="backward.end" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTupBackTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7M-uk-Jgq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-pg-tEz">
                                 <rect key="frame" x="281" y="535.66666666666663" width="109" height="109"/>
@@ -62,6 +65,9 @@
                                     <imageReference key="image" image="forward.end" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="61" scale="large" weight="heavy"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTupNextTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aMa-Eh-sRQ"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-Vx-JZ2">
                                 <rect key="frame" x="14" y="455.66666666666669" width="365" height="31"/>
@@ -121,7 +127,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1219" y="-32"/>
+            <point key="canvasLocation" x="-2723" y="-27"/>
+        </scene>
+        <!--Load Tracks View Controller-->
+        <scene sceneID="dag-QF-5QH">
+            <objects>
+                <viewController restorationIdentifier="LoadTracksViewController" storyboardIdentifier="LoadTracksViewController" id="bCX-oE-RYy" customClass="LoadTracksViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="87d-90-YeV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загружаем треки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPM-QJ-fvL">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8df-3l-y7W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TPM-QJ-fvL" firstAttribute="leading" secondItem="8df-3l-y7W" secondAttribute="leading" id="Nh8-Va-h63"/>
+                            <constraint firstItem="TPM-QJ-fvL" firstAttribute="centerY" secondItem="87d-90-YeV" secondAttribute="centerY" id="Pr1-Ng-o8H"/>
+                            <constraint firstItem="TPM-QJ-fvL" firstAttribute="centerX" secondItem="87d-90-YeV" secondAttribute="centerX" id="UGV-cO-JOJ"/>
+                            <constraint firstItem="8df-3l-y7W" firstAttribute="trailing" secondItem="TPM-QJ-fvL" secondAttribute="trailing" id="Yw0-Rt-hrf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZS-aZ-KWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5005.3435114503818" y="-27.464788732394368"/>
+        </scene>
+        <!--MusicL Ist View Controller-->
+        <scene sceneID="t5U-Ow-dyG">
+            <objects>
+                <viewController restorationIdentifier="MusicLIstViewController" storyboardIdentifier="MusicLIstViewController" id="fWe-1D-cyG" customClass="MusicLIstViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b9O-yh-qrX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h1z-bL-a26">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.10588235294117647" green="0.12941176470588234" blue="0.18823529411764706" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yYj-Hs-htn"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.12941176470588234" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yYj-Hs-htn" firstAttribute="bottom" secondItem="h1z-bL-a26" secondAttribute="bottom" id="fcB-BK-zNi"/>
+                            <constraint firstItem="h1z-bL-a26" firstAttribute="leading" secondItem="yYj-Hs-htn" secondAttribute="leading" id="n3g-X3-it1"/>
+                            <constraint firstItem="yYj-Hs-htn" firstAttribute="trailing" secondItem="h1z-bL-a26" secondAttribute="trailing" id="pG0-jC-VQZ"/>
+                            <constraint firstItem="h1z-bL-a26" firstAttribute="top" secondItem="yYj-Hs-htn" secondAttribute="top" id="s5e-t2-Pcb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="h1z-bL-a26" id="1mW-WA-csT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5I-Zs-Bg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3834" y="-27"/>
         </scene>
     </scenes>
     <resources>
@@ -133,6 +199,9 @@
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>

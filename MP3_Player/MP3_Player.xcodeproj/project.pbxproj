@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B70BC2E82D37F6AA0095EE82 /* Metel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B70BC2E72D37F6AA0095EE82 /* Metel.mp3 */; };
+		B727EDA12D39766A00207EC3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B727ED9F2D39766A00207EC3 /* CoreData.xcdatamodeld */; };
+		B727EDAB2D398B2A00207EC3 /* MusicItems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727EDA92D398B2A00207EC3 /* MusicItems+CoreDataProperties.swift */; };
+		B7293A4D2D3A2706009837C9 /* MusicLIstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A4C2D3A2706009837C9 /* MusicLIstViewController.swift */; };
+		B7293A4F2D3A2716009837C9 /* MusicLIstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A4E2D3A2716009837C9 /* MusicLIstViewPresenter.swift */; };
+		B7293A522D3A2AA9009837C9 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7293A512D3A2AA9009837C9 /* MusicCell.xib */; };
+		B7293A552D3A2C0B009837C9 /* LoadTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A542D3A2C0B009837C9 /* LoadTracksViewController.swift */; };
+		B7293A572D3A2C19009837C9 /* LoadTracksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A562D3A2C19009837C9 /* LoadTracksPresenter.swift */; };
+		B7293A612D3A330E009837C9 /* Musics in Resources */ = {isa = PBXBuildFile; fileRef = B7293A602D3A330E009837C9 /* Musics */; };
+		B7CF83E62D395609005DA92A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF83E52D395609005DA92A /* CoreDataManager.swift */; };
 		B7FEF4FD2D37716B003A9802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEF4FC2D37716B003A9802 /* AppDelegate.swift */; };
 		B7FEF4FF2D37716B003A9802 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEF4FE2D37716B003A9802 /* SceneDelegate.swift */; };
 		B7FEF5012D37716B003A9802 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEF5002D37716B003A9802 /* PlayerViewController.swift */; };
@@ -17,7 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B70BC2E72D37F6AA0095EE82 /* Metel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Metel.mp3; sourceTree = "<group>"; };
+		B727EDA02D39766A00207EC3 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		B727EDA92D398B2A00207EC3 /* MusicItems+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicItems+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B7293A4C2D3A2706009837C9 /* MusicLIstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLIstViewController.swift; sourceTree = "<group>"; };
+		B7293A4E2D3A2716009837C9 /* MusicLIstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLIstViewPresenter.swift; sourceTree = "<group>"; };
+		B7293A512D3A2AA9009837C9 /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
+		B7293A542D3A2C0B009837C9 /* LoadTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTracksViewController.swift; sourceTree = "<group>"; };
+		B7293A562D3A2C19009837C9 /* LoadTracksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTracksPresenter.swift; sourceTree = "<group>"; };
+		B7293A602D3A330E009837C9 /* Musics */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Musics; sourceTree = "<group>"; };
+		B7CF83E52D395609005DA92A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B7FEF4F92D37716B003A9802 /* MP3_Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MP3_Player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FEF4FC2D37716B003A9802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7FEF4FE2D37716B003A9802 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,33 +55,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B70BC2E42D37F60B0095EE82 /* Assets */ = {
+		B7293A492D3A26A4009837C9 /* Scens */ = {
 			isa = PBXGroup;
 			children = (
-				B70BC2E62D37F6310095EE82 /* Musics */,
-				B70BC2E52D37F6230095EE82 /* Covers */,
+				B7293A532D3A2BD8009837C9 /* LoadTracksViewController */,
+				B7293A4B2D3A26D4009837C9 /* MusicListVewController */,
+				B7293A4A2D3A26B9009837C9 /* PLayerViewController */,
+			);
+			path = Scens;
+			sourceTree = "<group>";
+		};
+		B7293A4A2D3A26B9009837C9 /* PLayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7FEF5002D37716B003A9802 /* PlayerViewController.swift */,
+				B7FEF5102D378739003A9802 /* PlayerViewPresenter.swift */,
+			);
+			path = PLayerViewController;
+			sourceTree = "<group>";
+		};
+		B7293A4B2D3A26D4009837C9 /* MusicListVewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7293A4C2D3A2706009837C9 /* MusicLIstViewController.swift */,
+				B7293A4E2D3A2716009837C9 /* MusicLIstViewPresenter.swift */,
+			);
+			path = MusicListVewController;
+			sourceTree = "<group>";
+		};
+		B7293A502D3A2A8E009837C9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B7293A512D3A2AA9009837C9 /* MusicCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B7293A532D3A2BD8009837C9 /* LoadTracksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7293A542D3A2C0B009837C9 /* LoadTracksViewController.swift */,
+				B7293A562D3A2C19009837C9 /* LoadTracksPresenter.swift */,
+			);
+			path = LoadTracksViewController;
+			sourceTree = "<group>";
+		};
+		B7293A582D3A31E9009837C9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B7293A602D3A330E009837C9 /* Musics */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		B70BC2E52D37F6230095EE82 /* Covers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Covers;
-			sourceTree = "<group>";
-		};
-		B70BC2E62D37F6310095EE82 /* Musics */ = {
-			isa = PBXGroup;
-			children = (
-				B70BC2E72D37F6AA0095EE82 /* Metel.mp3 */,
-			);
-			path = Musics;
 			sourceTree = "<group>";
 		};
 		B7FEF4F02D37716B003A9802 = {
 			isa = PBXGroup;
 			children = (
+				B727EDA92D398B2A00207EC3 /* MusicItems+CoreDataProperties.swift */,
+				B727ED9F2D39766A00207EC3 /* CoreData.xcdatamodeld */,
 				B7FEF4FB2D37716B003A9802 /* MP3_Player */,
 				B7FEF4FA2D37716B003A9802 /* Products */,
 			);
@@ -82,14 +129,15 @@
 		B7FEF4FB2D37716B003A9802 /* MP3_Player */ = {
 			isa = PBXGroup;
 			children = (
-				B70BC2E42D37F60B0095EE82 /* Assets */,
+				B7293A502D3A2A8E009837C9 /* Cells */,
+				B7293A492D3A26A4009837C9 /* Scens */,
+				B7293A582D3A31E9009837C9 /* Assets */,
 				B7FEF4FC2D37716B003A9802 /* AppDelegate.swift */,
 				B7FEF4FE2D37716B003A9802 /* SceneDelegate.swift */,
-				B7FEF5002D37716B003A9802 /* PlayerViewController.swift */,
-				B7FEF5102D378739003A9802 /* PlayerViewPresenter.swift */,
 				B7FEF5022D37716B003A9802 /* Main.storyboard */,
 				B7FEF5052D37716C003A9802 /* Assets.xcassets */,
 				B7FEF50A2D37716C003A9802 /* Info.plist */,
+				B7CF83E52D395609005DA92A /* CoreDataManager.swift */,
 			);
 			path = MP3_Player;
 			sourceTree = "<group>";
@@ -154,7 +202,8 @@
 			files = (
 				B7FEF5062D37716C003A9802 /* Assets.xcassets in Resources */,
 				B7FEF5042D37716B003A9802 /* Main.storyboard in Resources */,
-				B70BC2E82D37F6AA0095EE82 /* Metel.mp3 in Resources */,
+				B7293A612D3A330E009837C9 /* Musics in Resources */,
+				B7293A522D3A2AA9009837C9 /* MusicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +216,14 @@
 			files = (
 				B7FEF5112D378739003A9802 /* PlayerViewPresenter.swift in Sources */,
 				B7FEF5012D37716B003A9802 /* PlayerViewController.swift in Sources */,
+				B7293A552D3A2C0B009837C9 /* LoadTracksViewController.swift in Sources */,
+				B727EDA12D39766A00207EC3 /* CoreData.xcdatamodeld in Sources */,
+				B727EDAB2D398B2A00207EC3 /* MusicItems+CoreDataProperties.swift in Sources */,
+				B7293A572D3A2C19009837C9 /* LoadTracksPresenter.swift in Sources */,
+				B7293A4D2D3A2706009837C9 /* MusicLIstViewController.swift in Sources */,
+				B7CF83E62D395609005DA92A /* CoreDataManager.swift in Sources */,
 				B7FEF4FD2D37716B003A9802 /* AppDelegate.swift in Sources */,
+				B7293A4F2D3A2716009837C9 /* MusicLIstViewPresenter.swift in Sources */,
 				B7FEF4FF2D37716B003A9802 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +372,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MP3_Player/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = PlayerViewController;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -344,7 +400,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MP3_Player/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = PlayerViewController;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -383,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B727ED9F2D39766A00207EC3 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B727EDA02D39766A00207EC3 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = B727EDA02D39766A00207EC3 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B7FEF4F12D37716B003A9802 /* Project object */;
 }
