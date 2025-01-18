@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,37 +14,76 @@
             <objects>
                 <viewController restorationIdentifier="PlayerViewController" storyboardIdentifier="PlayerViewController" id="BYZ-38-t0r" customClass="PlayerViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i15-RQ-8jG">
-                                <rect key="frame" x="15" y="10" width="74.666666666666671" height="74.666666666666671"/>
+                                <rect key="frame" x="15" y="10" width="45.5" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i15-RQ-8jG" secondAttribute="height" multiplier="1:1" id="eWp-Zq-f3X"/>
+                                    <constraint firstAttribute="width" secondItem="i15-RQ-8jG" secondAttribute="height" multiplier="1:1" id="eXf-EB-UET"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" cornerStyle="large">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="17" scale="large" weight="medium"/>
                                 </buttonConfiguration>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="eWp-Zq-f3X"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="eWp-Zq-f3X"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="eXf-EB-UET"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="closeButtonYup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sXv-bc-SY2"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cover 1" translatesAutoresizingMaskIntoConstraints="NO" id="wM2-PH-0Qh">
+                                <rect key="frame" x="46.5" y="65.5" width="227" height="227"/>
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wM2-PH-0Qh" secondAttribute="height" multiplier="1:1" id="aBf-bi-YbU"/>
+                                    <constraint firstAttribute="width" secondItem="wM2-PH-0Qh" secondAttribute="height" multiplier="1:1" id="mOE-D2-FoM"/>
+                                </constraints>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="aBf-bi-YbU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="aBf-bi-YbU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="mOE-D2-FoM"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENq-XA-MDl">
-                                <rect key="frame" x="28.666666666666657" y="491.66666666666674" width="372.66666666666674" height="396.33333333333326"/>
+                                <rect key="frame" x="46.5" y="317.5" width="227" height="240.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1YK-0j-fco">
-                                        <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="46.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-hm-ugz">
-                                                <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="26.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="113.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutorName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OM-VL-xG3">
-                                                <rect key="frame" x="0.0" y="26.333333333333314" width="113.66666666666667" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="26.5" width="113.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,20 +91,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="11x-j8-GSo">
-                                        <rect key="frame" x="0.0" y="42.666666666666686" width="372.66666666666669" height="353.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="227" height="198"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-Vx-JZ2">
-                                                <rect key="frame" x="-2" y="0.0" width="376.66666666666669" height="125.66666666666667"/>
+                                                <rect key="frame" x="-2" y="0.0" width="231" height="70"/>
                                                 <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <connections>
                                                     <action selector="changeValueSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="mc0-EE-jXI"/>
                                                 </connections>
                                             </slider>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="20Z-N1-Peq">
-                                                <rect key="frame" x="0.0" y="129.66666666666663" width="372.66666666666669" height="224"/>
+                                                <rect key="frame" x="0.0" y="74" width="227" height="124"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ml-Hy-7R9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="123.66666666666667" height="224"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="124"/>
                                                         <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
@@ -77,7 +116,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-gG-c4h">
-                                                        <rect key="frame" x="124.66666666666669" y="0.0" width="123.33333333333331" height="224"/>
+                                                        <rect key="frame" x="76" y="0.0" width="75" height="124"/>
                                                         <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
@@ -89,7 +128,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-pg-tEz">
-                                                        <rect key="frame" x="249.00000000000003" y="0.0" width="123.66666666666666" height="224"/>
+                                                        <rect key="frame" x="152" y="0.0" width="75" height="124"/>
                                                         <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
@@ -105,13 +144,41 @@
                                                     <constraint firstItem="KzO-gG-c4h" firstAttribute="width" secondItem="RXs-pg-tEz" secondAttribute="width" id="iHW-PY-ZK8"/>
                                                     <constraint firstItem="7ml-Hy-7R9" firstAttribute="width" secondItem="KzO-gG-c4h" secondAttribute="width" id="rJr-El-ol9"/>
                                                 </constraints>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="rJr-El-ol9"/>
+                                                        <include reference="iHW-PY-ZK8"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="rJr-El-ol9"/>
+                                                        <include reference="iHW-PY-ZK8"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="20Z-N1-Peq" secondAttribute="trailing" id="Bzf-zL-Cij"/>
                                             <constraint firstItem="20Z-N1-Peq" firstAttribute="height" secondItem="QRa-Vx-JZ2" secondAttribute="height" multiplier="1.8" id="CVJ-gh-4Ka"/>
+                                            <constraint firstItem="20Z-N1-Peq" firstAttribute="leading" secondItem="11x-j8-GSo" secondAttribute="leading" id="D7K-TC-8ls"/>
                                             <constraint firstItem="20Z-N1-Peq" firstAttribute="leading" secondItem="11x-j8-GSo" secondAttribute="leading" id="exW-8h-kRc"/>
                                             <constraint firstAttribute="trailing" secondItem="20Z-N1-Peq" secondAttribute="trailing" id="wEm-oc-LeM"/>
                                         </constraints>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="wEm-oc-LeM"/>
+                                                <include reference="exW-8h-kRc"/>
+                                                <include reference="CVJ-gh-4Ka"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="wEm-oc-LeM"/>
+                                                <include reference="exW-8h-kRc"/>
+                                                <include reference="CVJ-gh-4Ka"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -119,29 +186,84 @@
                                     <constraint firstAttribute="bottom" secondItem="11x-j8-GSo" secondAttribute="bottom" id="nde-F8-f8E"/>
                                     <constraint firstAttribute="trailing" secondItem="11x-j8-GSo" secondAttribute="trailing" id="sJD-gq-DrR"/>
                                 </constraints>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sJD-gq-DrR"/>
+                                        <exclude reference="fMC-HY-5ZZ"/>
+                                        <exclude reference="nde-F8-f8E"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="sJD-gq-DrR"/>
+                                        <exclude reference="fMC-HY-5ZZ"/>
+                                        <exclude reference="nde-F8-f8E"/>
+                                    </mask>
+                                </variation>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cover 1" translatesAutoresizingMaskIntoConstraints="NO" id="wM2-PH-0Qh">
-                                <rect key="frame" x="28.666666666666657" y="94.000000000000028" width="372.66666666666674" height="372.66666666666674"/>
-                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wM2-PH-0Qh" secondAttribute="height" multiplier="1:1" id="aBf-bi-YbU"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.54334990530303029" green="0.27019983229503669" blue="0.10104659746488857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0EX-zg-dse"/>
                             <constraint firstItem="ENq-XA-MDl" firstAttribute="width" secondItem="wM2-PH-0Qh" secondAttribute="width" id="17k-ei-lOj"/>
                             <constraint firstItem="ENq-XA-MDl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1jB-wm-KUe"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="2lx-Rx-TaG"/>
+                            <constraint firstAttribute="trailing" secondItem="ENq-XA-MDl" secondAttribute="trailing" constant="25" id="3A2-Qr-0HE"/>
                             <constraint firstItem="i15-RQ-8jG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="5cZ-om-ihC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ENq-XA-MDl" secondAttribute="bottom" constant="10" id="5xn-wt-Yte"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DBd-On-b5h"/>
+                            <constraint firstItem="i15-RQ-8jG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="KNu-t0-ssl"/>
+                            <constraint firstItem="i15-RQ-8jG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Kum-gr-N0x"/>
+                            <constraint firstItem="ENq-XA-MDl" firstAttribute="leading" secondItem="wM2-PH-0Qh" secondAttribute="trailing" constant="25" id="LHb-rW-4sC"/>
                             <constraint firstItem="i15-RQ-8jG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="O5C-uw-vsC"/>
                             <constraint firstItem="ENq-XA-MDl" firstAttribute="top" secondItem="wM2-PH-0Qh" secondAttribute="bottom" constant="25" id="QPz-PK-BMc"/>
                             <constraint firstItem="wM2-PH-0Qh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YSx-ao-QwU"/>
-                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="ayP-F7-2uc"/>
+                            <constraint firstItem="wM2-PH-0Qh" firstAttribute="top" secondItem="i15-RQ-8jG" secondAttribute="bottom" constant="10" id="ayP-F7-2uc"/>
+                            <constraint firstItem="ENq-XA-MDl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dIy-j5-THw"/>
                             <constraint firstItem="wM2-PH-0Qh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="p8y-0Z-Jx0"/>
                             <constraint firstItem="i15-RQ-8jG" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="wwF-IO-1r9"/>
                         </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="5xn-wt-Yte"/>
+                                <exclude reference="5cZ-om-ihC"/>
+                                <exclude reference="wwF-IO-1r9"/>
+                                <exclude reference="O5C-uw-vsC"/>
+                                <exclude reference="p8y-0Z-Jx0"/>
+                                <exclude reference="YSx-ao-QwU"/>
+                                <exclude reference="ayP-F7-2uc"/>
+                                <exclude reference="1jB-wm-KUe"/>
+                                <exclude reference="QPz-PK-BMc"/>
+                                <exclude reference="17k-ei-lOj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="5xn-wt-Yte"/>
+                                <exclude reference="5cZ-om-ihC"/>
+                                <exclude reference="wwF-IO-1r9"/>
+                                <exclude reference="O5C-uw-vsC"/>
+                                <exclude reference="p8y-0Z-Jx0"/>
+                                <exclude reference="YSx-ao-QwU"/>
+                                <exclude reference="ayP-F7-2uc"/>
+                                <exclude reference="1jB-wm-KUe"/>
+                                <exclude reference="QPz-PK-BMc"/>
+                                <exclude reference="17k-ei-lOj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Kum-gr-N0x"/>
+                                <exclude reference="KNu-t0-ssl"/>
+                                <exclude reference="2lx-Rx-TaG"/>
+                                <exclude reference="DBd-On-b5h"/>
+                                <exclude reference="0EX-zg-dse"/>
+                                <exclude reference="3A2-Qr-0HE"/>
+                                <exclude reference="LHb-rW-4sC"/>
+                                <exclude reference="dIy-j5-THw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="AuthorNameLabel" destination="1OM-VL-xG3" id="Jp6-Yg-5pZ"/>
@@ -162,11 +284,11 @@
             <objects>
                 <viewController restorationIdentifier="LoadTracksViewController" storyboardIdentifier="LoadTracksViewController" id="bCX-oE-RYy" customClass="LoadTracksViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87d-90-YeV">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загружаем треки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPM-QJ-fvL">
-                                <rect key="frame" x="68.666666666666686" y="444" width="293" height="44"/>
+                                <rect key="frame" x="13.5" y="262" width="293" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -191,11 +313,11 @@
             <objects>
                 <viewController restorationIdentifier="MusicLIstViewController" storyboardIdentifier="MusicLIstViewController" id="fWe-1D-cyG" customClass="MusicLIstViewController" customModule="MP3_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9O-yh-qrX">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h1z-bL-a26">
-                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.10588235294117647" green="0.12941176470588234" blue="0.18823529411764706" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
@@ -219,7 +341,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cover 1" width="143" height="141.66667175292969"/>
+        <image name="Cover 1" width="214.5" height="212.5"/>
         <image name="backward.end" catalog="system" width="128" height="120"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="forward.end" catalog="system" width="128" height="120"/>
