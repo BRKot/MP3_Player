@@ -33,8 +33,8 @@ class MainCoordinator: Coordinator {
         
         viewController.presenter = presenter
       
-        presenter.wasLoad = { musicItems in
-            self.showTrackListView(musicItems: musicItems)
+        presenter.wasLoad = { [weak self] musicItems in
+            self?.showTrackListView(musicItems: musicItems)
         }
         
         navigationController.pushViewController(viewController, animated: true)
@@ -51,8 +51,8 @@ class MainCoordinator: Coordinator {
         viewController.presenter = presenter
         
         
-        presenter.onselectedCell = { musicItems, musicId in
-            self.showPlayerView(musicItems: musicItems, musicId: musicId)
+        presenter.onselectedCell = { [weak self] musicItems, musicId in
+            self?.showPlayerView(musicItems: musicItems, musicId: musicId)
         }
         
         navigationController.pushViewController(viewController, animated: true)
