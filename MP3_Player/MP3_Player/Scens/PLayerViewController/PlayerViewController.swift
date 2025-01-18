@@ -11,14 +11,15 @@ import AVFoundation
 protocol PlayerView{
     func configurCoverImageView(image: UIImage)
     
-    func configurTrackNameLabel(name: String)
-    func configurAuthorNameLabel(name: String)
+    func configurTrackNameLabel(atributs: NSAttributedString)
+    func configurAuthorNameLabel(atributs: NSAttributedString)
     
     func configurTrackTimeSlider(value: Float)
-    
-    func configurTrackBackButton()
+    func addTrackTimeSliderTargets()
+     
+    func configurTrackBackButton(image: UIImage)
     func configurPlayTrackButton(image: UIImage)
-    func configurTrackForwardButton()
+    func configurTrackForwardButton(image: UIImage)
 }
 
 class PlayerViewController: UIViewController {
@@ -37,47 +38,72 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = PlayerViewPresenter(view: self)
         presenter?.setupUI()
     }
     
-    @IBAction func onPlayButtonTuch(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
         presenter?.playTrack()
+    }
+    
+    @IBAction func onPlayButtonTuch(_ sender: Any) {
+        presenter?.isPlaing = !(presenter?.isPlaing ?? false)
     }
     
     @IBAction func changeValueSlider(_ sender: Any) {
         presenter?.changeTrackTime(partFullTime: Double(self.trackTimeSlider.value))
     }
+    
     @IBAction func onTupNextTrack(_ sender: Any) {
-        presenter?.indexMass = (presenter?.indexMass ?? 0) + 1
+        presenter?.idPLayTrack += 1
     }
     
     @IBAction func onTupBackTrack(_ sender: Any) {
-        presenter?.indexMass = (presenter?.indexMass ?? 0) - 1
+        presenter?.idPLayTrack += -1
+    }
+    
+    @IBAction func closeButtonYup(_ sender: Any) {
+        presenter?.onCloseView()
+    }
+    
+    @objc func sliderBeganSliding() {
+        presenter?.isSliding = true
+    }
+
+    @objc func sliderEndedSliding() {
+        presenter?.isSliding = false
     }
     
 }
+    
+
 
 extension PlayerViewController: PlayerView{
+    
     func configurCoverImageView(image: UIImage) {
         self.trackCoverUIImageView.layer.cornerRadius = trackTimeSlider.frame.width / 15
         self.trackCoverUIImageView.image = image
     }
     
-    func configurTrackNameLabel(name: String) {
-        
+    func configurTrackNameLabel(atributs: NSAttributedString) {
+        self.TrackNameLabel.attributedText = atributs
     }
     
-    func configurAuthorNameLabel(name: String) {
-        
+    func configurAuthorNameLabel(atributs: NSAttributedString) {
+        self.AuthorNameLabel.attributedText = atributs
     }
     
     func configurTrackTimeSlider(value: Float) {
         self.trackTimeSlider.value = value
     }
     
-    func configurTrackBackButton() {
-        
+    func addTrackTimeSliderTargets() {
+        trackTimeSlider.addTarget(self, action: #selector(sliderBeganSliding), for: .touchDown)
+        trackTimeSlider.addTarget(self, action: #selector(sliderEndedSliding), for: [.touchUpInside, .touchUpOutside])
+    }
+    
+    func configurTrackBackButton(image: UIImage) {
+        self.TrackBackButton.setImage(image, for: .normal)
+        self.TrackBackButton.tintColor = UIColor.white
     }
     
     func configurPlayTrackButton(image: UIImage) {
@@ -85,7 +111,8 @@ extension PlayerViewController: PlayerView{
           self.playTrackButton.tintColor = UIColor.white
       }
     
-    func configurTrackForwardButton() {
-        
+    func configurTrackForwardButton(image: UIImage) {
+        self.TrackForwardButton.setImage(image, for: .normal)
+        self.TrackForwardButton.tintColor = UIColor.white
     }
 }

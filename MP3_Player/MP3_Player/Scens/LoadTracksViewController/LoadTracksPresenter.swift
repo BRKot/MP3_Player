@@ -12,48 +12,101 @@ import UIKit
 struct Track {
     let nameTrack: String
     let nameAuthor: String
-    let fileURL: URL // URL файла для дальнейшего использования
 }
 
 
 class LoadTracksPresenter{
+    
+    var wasLoad: (([MusicItems])->Void)?
+    
     private var view: LoadTracksView?
     private var musicItems: [MusicItems]?
     private var tracks: [Track]?
     
     init(view: LoadTracksView) {
         self.view = view
-        
-        if coreDataIsExist(){
-            CoreDataManager.shared.deletAllMusicItems()
-            print("CoreData заполнена")
-        }else{
+    }
+    
+    func loadTracks(){
+        guard let musics = coreDataItems(), musics.count > 0 else {
             if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                self.tracks = loadTracks(from: documentsDirectory)
-                
-                for track in self.tracks ?? [] {
-                    print("Трек: \(track.nameTrack), Автор: \(track.nameAuthor), URL: \(track.fileURL)")
+                loadTracks(from: documentsDirectory){ tracks in
+                    self.tracks = tracks
+                    self.saveToCoreDataFiles()
                 }
+                loadTracks()
             }
+            return
+        }
+        print("CoreData заполнена")
+        loadFinish(musics: musics)
+    }
+    
+    func loadFinish(musics: [MusicItems]){
+        wasLoad!(musics ?? [])
+    }
+    
+    func coreDataItems() -> [MusicItems]?{
+        let coreDataManager = CoreDataManager.shared
+
+        return coreDataManager.fetchMusics() ?? []
+    }
+    
+    func saveToCoreDataFiles() {
+        let coreDataManager = CoreDataManager.shared
+        for (index, track) in (tracks ?? []).enumerated() {
+            let fileName = "\(track.nameTrack) - \(track.nameAuthor)"
+            print("Ищем файл: \(fileName).mp3")
+
+            let resourcePaths = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil)
+            if resourcePaths.isEmpty {
+                print("Нет доступных mp3 файлов")
+            } else {
+                print("Доступные mp3 файлы: \(resourcePaths)")
+            }
+
+            // Поиск файла
+            guard let path = Bundle.main.url(forResource: fileName, withExtension: "mp3", subdirectory: "Musics") else {
+                print("Аудиофайл '\(fileName).mp3' не найден")
+                return
+            }
+
+            print("Файл найден: \(path)")
+
+            let urlString = path.path // Сохраняем только путь к файлу
+
+            coreDataManager.createMusic(
+                id: Int16(index + 1),
+                musicURL: urlString,
+                author: track.nameAuthor,
+                musicName: track.nameTrack,
+                coverImage: UIImage(named: "Cover \(index + 1)")?.pngData()
+            )
         }
     }
     
-    func coreDataIsExist() -> Bool{
-        let coreDataManager = CoreDataManager.shared
-        
-        return coreDataManager.fetchMusics() != []
-    }
-    
+    /*
     func saveToCoreDataFiles(){
         let coreDataManager = CoreDataManager.shared
         for (index, track) in (tracks ?? []).enumerated(){
-            coreDataManager.createMusic(id: Int16(index),
-                                        musicURL: track.fileURL.path(),
-                                        author: track.nameAuthor,
-                                        musicName: track.nameTrack,
-                                        coverImage: UIImage(named: "Cover \(index)")?.pngData())
+            print("\(track.nameTrack) - \(track.nameAuthor)")
+            guard let path = Bundle.main.url(forResource: "\(track.nameTrack) - \(track.nameAuthor)", withExtension: "mp3") else {
+                print("Аудиофайл '\(track.nameTrack).mp3' не найден")
+                return
+            }
+            let urlString = path.path // Сохраняем только путь к файлу
+
+            coreDataManager.createMusic(
+                id: Int16(index + 1),
+                musicURL: urlString,
+                author: track.nameAuthor,
+                musicName: track.nameTrack,
+                coverImage: UIImage(named: "Cover \(index + 1)")?.pngData()
+            )
         }
-    }
+    }*/
+
+
     
     func getAudioFilesFromBundle() -> [URL]? {
         // Получаем путь к папке musics в Bundle
@@ -81,33 +134,14 @@ class LoadTracksPresenter{
         }
     }
     
-//    func getAudioFiles(from directory: URL) -> [URL]? {
-//        let fileManager = FileManager.default
-//        
-//        do {
-//            // Получаем список всех файлов в папке
-//            let files = try fileManager.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil, options: [])
-//            
-//            // Фильтруем только аудиофайлы (например, .mp3, .m4a)
-//            let audioFiles = files.filter { file in
-//                let fileExtension = file.pathExtension.lowercased()
-//                return fileExtension == "mp3"
-//            }
-//            
-//            return audioFiles
-//        } catch {
-//            print("Ошибка при чтении папки: \(error.localizedDescription)")
-//            return nil
-//        }
-//    }
-    
-    func loadTracks(from directory: URL) -> [Track] {
+    func loadTracks(from directory: URL, completion: @escaping ([Track]?) -> Void){
         var tracks: [Track] = []
             
             // Получаем список аудиофайлов из папки musics
-            guard let audioFiles = getAudioFilesFromBundle() else {
-                return tracks
-            }
+        guard let audioFiles = getAudioFilesFromBundle() else {
+            completion(nil)
+            return
+        }
             
             // Обрабатываем каждый файл
             for fileURL in audioFiles {
@@ -117,14 +151,11 @@ class LoadTracksPresenter{
                 if let trackInfo = parseTrackInfo(from: fileName) {
                     let track = Track(
                         nameTrack: trackInfo.nameTrack,
-                        nameAuthor: trackInfo.nameAuthor,
-                        fileURL: fileURL
-                    )
+                        nameAuthor: trackInfo.nameAuthor)
                     tracks.append(track)
                 }
             }
-            
-            return tracks
+            completion(tracks)
     }
     
     func parseTrackInfo(from fileName: String) -> (nameTrack: String, nameAuthor: String)? {

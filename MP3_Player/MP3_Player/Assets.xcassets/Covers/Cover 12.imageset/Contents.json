@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "handmade acrylic painting _ cat and redwine _ humorous canvas art _ original _ singleton.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "handmade acrylic painting _ cat and redwine _ humorous canvas art _ original _ singleton 1.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "handmade acrylic painting _ cat and redwine _ humorous canvas art _ original _ singleton 2.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

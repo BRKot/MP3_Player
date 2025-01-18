@@ -7,284 +7,77 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "377B6D1E-DE76-43CE-8394-38206EDFF3A7"
+            uuid = "14A4EBF9-8815-40F0-857A-1C7642FA6239"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "12A1D67D-47A3-40F3-BFF8-60ED70E153D6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4D48182B-F980-4A21-BD34-AF8D556E1F68"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "90DEF761-2957-4EDD-BB5B-4D0B23B40CDC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/CoreDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetchMusic(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "90DEF761-2957-4EDD-BB5B-4D0B23B40CDC - b287a8f32051a03d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "90DEF761-2957-4EDD-BB5B-4D0B23B40CDC - b287a8f32051a07b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AE7787EC-44C5-4172-9A5C-D87E07F67069"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/CoreDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "fetchMusic(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AE7787EC-44C5-4172-9A5C-D87E07F67069 - b287a8f32051a0ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "AE7787EC-44C5-4172-9A5C-D87E07F67069 - b287a8f32051a0dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "348">
-               </Location>
-               <Location
-                  uuid = "AE7787EC-44C5-4172-9A5C-D87E07F67069 - 70e51b08a165de42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (MP3_Player.MusicItems) -&gt; Swift.Bool in MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2AE0D752-9410-4C01-A018-8481130F55F5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/CoreDataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "fetchMusic(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2AE0D752-9410-4C01-A018-8481130F55F5 - b287a8f32051a03d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "2AE0D752-9410-4C01-A018-8481130F55F5 - b287a8f32051a03d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusic(with: Swift.Int16) -&gt; Swift.Optional&lt;MP3_Player.MusicItems&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7CF460B5-A490-4042-B5E2-892270330FC3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "indexMass"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "isPlaing"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8EC35B2B-29C1-4F00-AAF7-650440D5C101"
+            uuid = "EB5EF794-1938-40E2-9E49-F06B7E1A489A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "setImage()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "playTrack()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8EC35B2B-29C1-4F00-AAF7-650440D5C101 - 63591925b38d6940"
+                  uuid = "EB5EF794-1938-40E2-9E49-F06B7E1A489A - a8c50220f1e3ce9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.PlayerViewPresenter.setImage() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.playTrack() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/PlayerViewPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "864">
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "964">
                </Location>
                <Location
-                  uuid = "8EC35B2B-29C1-4F00-AAF7-650440D5C101 - 63591925b38d6940"
+                  uuid = "EB5EF794-1938-40E2-9E49-F06B7E1A489A - bc1977dfc1a9b4fb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.PlayerViewPresenter.setImage() -&gt; ()"
+                  symbolName = "closure #1 (MP3_Player.MusicItems) -&gt; Swift.Bool in MP3_Player.PlayerViewPresenter.playTrack() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/PlayerViewPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "716">
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "8EC35B2B-29C1-4F00-AAF7-650440D5C101 - 63591925b38d6940"
+                  uuid = "EB5EF794-1938-40E2-9E49-F06B7E1A489A - a8c50220f1e3cc8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.PlayerViewPresenter.setImage() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.playTrack() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/PlayerViewPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
                   offsetFromSymbolStart = "820">
                </Location>
             </Locations>
@@ -293,47 +86,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7BB4D0D9-F4E5-4FCD-B843-DACD64B471EA"
+            uuid = "A6EE0ABA-8D1F-4D11-B913-495BF48327B9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/PlayerViewPresenter.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "setImage()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "playTrack()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7BB4D0D9-F4E5-4FCD-B843-DACD64B471EA - 63591925b38d69a1"
+                  uuid = "A6EE0ABA-8D1F-4D11-B913-495BF48327B9 - a8c50220f1e3c2b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.PlayerViewPresenter.setImage() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.playTrack() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/PlayerViewPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "256">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "912">
                </Location>
                <Location
-                  uuid = "7BB4D0D9-F4E5-4FCD-B843-DACD64B471EA - 63591925b38d69a1"
+                  uuid = "A6EE0ABA-8D1F-4D11-B913-495BF48327B9 - a8c50220f1e3c2b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.PlayerViewPresenter.setImage() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.playTrack() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/PlayerViewPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "244">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "200">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -341,79 +134,107 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "275EC64E-3A0A-45AB-B58D-8D7B1D68E8CE"
+            uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/Scens/MusicListVewController/MusicLIstViewController.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A70DA893-6C28-46A3-8DDC-4971D2A7214D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/Scens/LoadTracksViewController/LoadTracksViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "34AB263D-173D-4AF4-8E4C-E37902952BA5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "coreDataIsExist()"
-            landmarkType = "7">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "isPlaing"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "34AB263D-173D-4AF4-8E4C-E37902952BA5 - 3d972cc964b5a8f6"
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - 9ef38b5080b07fcd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.coreDataIsExist() -&gt; Swift.Bool"
+                  symbolName = "MP3_Player.PlayerViewPresenter.isPlaing.getter : Swift.Bool"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  uuid = "34AB263D-173D-4AF4-8E4C-E37902952BA5 - 3d972cc964b5a8d5"
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - 1dddeaa22bc72306"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.coreDataIsExist() -&gt; Swift.Bool"
+                  symbolName = "MP3_Player.PlayerViewPresenter.isPlaing.setter : Swift.Bool"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - 6c615330c8102517"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.PlayerViewPresenter.isPlaing.modify : Swift.Bool"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - 8a7e842dd8e04810"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.PlayerViewPresenter.isPlaing.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - e50fcdcdf6e398a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.PlayerViewPresenter.init(view: MP3_Player.PlayerView, idPlayTrack: Swift.Int16, musicItems: Swift.Array&lt;MP3_Player.MusicItems&gt;, avPlayerManager: MP3_Player.AVPlayerManager) -&gt; MP3_Player.PlayerViewPresenter"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "5DE786E2-F466-4EA0-B158-8A5D9F62C249 - e50fcdcdf6e398a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.PlayerViewPresenter.init(view: MP3_Player.PlayerView, idPlayTrack: Swift.Int16, musicItems: Swift.Array&lt;MP3_Player.MusicItems&gt;, avPlayerManager: MP3_Player.AVPlayerManager) -&gt; MP3_Player.PlayerViewPresenter"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "164">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -421,95 +242,94 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B8D1B6A6-E859-4641-A2A6-87E2E5FB8BE0"
+            uuid = "4D14C5AC-D25B-4251-94F2-E43CB60FDBEA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/CoreDataManager.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "fetchMusics()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B8D1B6A6-E859-4641-A2A6-87E2E5FB8BE0 - 3917335e7ba77f1b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusics() -&gt; Swift.Optional&lt;Swift.Array&lt;MP3_Player.MusicItems&gt;&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "B8D1B6A6-E859-4641-A2A6-87E2E5FB8BE0 - 3917335e7ba77f1b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.CoreDataManager.fetchMusics() -&gt; Swift.Optional&lt;Swift.Array&lt;MP3_Player.MusicItems&gt;&gt;"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/CoreDataManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "isPlaing"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "018059E0-4C06-4DC8-A4B0-B7B92CCC2F7B"
+            uuid = "97DAEA53-F73D-4FCD-9D24-948003DC996A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "saveToCoreDataFiles()"
+            landmarkName = "onPlayButtonTuch(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3373DCEB-2790-4F5B-BFA1-D3CD6C676307"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "setupUI()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "018059E0-4C06-4DC8-A4B0-B7B92CCC2F7B - 4d91205cb19a199d"
+                  uuid = "3373DCEB-2790-4F5B-BFA1-D3CD6C676307 - 42a90803c7e19423"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.saveToCoreDataFiles() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.setupUI() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "272">
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "252">
                </Location>
                <Location
-                  uuid = "018059E0-4C06-4DC8-A4B0-B7B92CCC2F7B - 4d91205cb19a19fc"
+                  uuid = "3373DCEB-2790-4F5B-BFA1-D3CD6C676307 - 42a90803c7e19423"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.saveToCoreDataFiles() -&gt; ()"
+                  symbolName = "MP3_Player.PlayerViewPresenter.setupUI() -&gt; ()"
                   moduleName = "MP3_Player"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "272">
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "3373DCEB-2790-4F5B-BFA1-D3CD6C676307 - dc3044becfdd2d23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MP3_Player.MusicItems) -&gt; Swift.Bool in MP3_Player.PlayerViewPresenter.setupUI() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -517,49 +337,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "88973ADA-442A-4FAA-95D8-D43BA37633D3"
+            uuid = "B922A2FD-1A11-4C54-9BC3-BCBB83BA30D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "coreDataIsExist()"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "setupUI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "88973ADA-442A-4FAA-95D8-D43BA37633D3 - 3d972cc964b5ab34"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.coreDataIsExist() -&gt; Swift.Bool"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "88973ADA-442A-4FAA-95D8-D43BA37633D3 - 3d972cc964b5ab1b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MP3_Player.LoadTracksPresenter.coreDataIsExist() -&gt; Swift.Bool"
-                  moduleName = "MP3_Player"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Scens/LoadTracksViewController/LoadTracksPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

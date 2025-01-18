@@ -10,20 +10,21 @@ import UIKit
 
 
 protocol LoadTracksView{
-   
+   func stopLoad()
 }
 
 class LoadTracksViewController: UIViewController {
     
-    var presenter: LoadTracksPresenter?
+    weak var presenter: LoadTracksPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = LoadTracksPresenter(view: self)
     }
 }
 
 extension LoadTracksViewController: LoadTracksView{
-    
+    func stopLoad(){
+
+    }
 }
 
