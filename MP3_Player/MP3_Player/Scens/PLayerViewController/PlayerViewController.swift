@@ -46,7 +46,7 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func onPlayButtonTuch(_ sender: Any) {
-        presenter?.isPlaing = !(presenter?.isPlaing ?? false)
+        presenter?.isPLaying = !(presenter?.isPLaying ?? false)
     }
     
     @IBAction func changeValueSlider(_ sender: Any) {
