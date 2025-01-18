@@ -5,12 +5,16 @@ import AVFoundation
 class PlayerViewPresenter {
     
     var closeView: (()->Void)?
-    var isSliding = false
-    private var view: PlayerView?
-    var timeObserver: Any?
-    var avPlayerManager: AVPlayerManager?
     
+    weak private var view: PlayerView?
+    weak var avPlayerManager: AVPlayerManager?
+    
+    var timeObserver: Any?
+
     var musicsItems: [MusicItems] = []
+    
+    
+    var isSliding = false
     var idPLayTrack: Int16 {
         didSet {
             // Проверяем, что массив не пуст
@@ -30,7 +34,6 @@ class PlayerViewPresenter {
             playNextTrack()
         }
     }
-    
     var isPLaying: Bool = true{
         didSet {
             self.isPLaying ? playTrack() : pauseTrack()

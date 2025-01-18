@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-protocol PlayerView{
+protocol PlayerView: AnyObject{
     func configurCoverImageView(image: UIImage)
     
     func configurTrackNameLabel(atributs: NSAttributedString)

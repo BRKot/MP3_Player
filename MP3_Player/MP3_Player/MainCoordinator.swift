@@ -30,6 +30,7 @@ class MainCoordinator: Coordinator {
             return
         }
         let presenter = LoadTracksPresenter(view: viewController)
+        
         viewController.presenter = presenter
       
         presenter.wasLoad = { musicItems in

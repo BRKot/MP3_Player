@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-protocol MusicLIstView{
+protocol MusicLIstView: AnyObject{
     func reloadTableViewData()
     func setupTableView(reusIdentifier: String)
 }

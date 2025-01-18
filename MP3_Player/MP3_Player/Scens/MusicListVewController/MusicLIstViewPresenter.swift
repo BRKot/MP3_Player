@@ -13,7 +13,7 @@ class MusicLIstPresenter{
     
     var onselectedCell:(([MusicItems], Int16)->Void)?
     
-    private var view: MusicLIstView?
+    weak private var view: MusicLIstView?
     private var musicItems: [MusicItems]
     
     var numberCells: Int{
