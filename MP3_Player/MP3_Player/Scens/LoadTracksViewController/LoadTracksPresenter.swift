@@ -27,14 +27,14 @@ class LoadTracksPresenter{
         self.view = view
     }
     
-    func loadTracks(){
+    func startLoadTracks(){
         guard let musics = coreDataItems(), musics.count > 0 else {
             if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 loadTracks(from: documentsDirectory){ tracks in
                     self.tracks = tracks
                     self.saveToCoreDataFiles()
                 }
-                loadTracks()
+                startLoadTracks()
             }
             return
         }
@@ -43,7 +43,7 @@ class LoadTracksPresenter{
     }
     
     func loadFinish(musics: [MusicItems]){
-        wasLoad!(musics ?? [])
+        wasLoad!(musics)
     }
     
     func coreDataItems() -> [MusicItems]?{
@@ -84,29 +84,6 @@ class LoadTracksPresenter{
             )
         }
     }
-    
-    /*
-    func saveToCoreDataFiles(){
-        let coreDataManager = CoreDataManager.shared
-        for (index, track) in (tracks ?? []).enumerated(){
-            print("\(track.nameTrack) - \(track.nameAuthor)")
-            guard let path = Bundle.main.url(forResource: "\(track.nameTrack) - \(track.nameAuthor)", withExtension: "mp3") else {
-                print("Аудиофайл '\(track.nameTrack).mp3' не найден")
-                return
-            }
-            let urlString = path.path // Сохраняем только путь к файлу
-
-            coreDataManager.createMusic(
-                id: Int16(index + 1),
-                musicURL: urlString,
-                author: track.nameAuthor,
-                musicName: track.nameTrack,
-                coverImage: UIImage(named: "Cover \(index + 1)")?.pngData()
-            )
-        }
-    }*/
-
-
     
     func getAudioFilesFromBundle() -> [URL]? {
         // Получаем путь к папке musics в Bundle

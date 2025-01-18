@@ -19,41 +19,16 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        setupNavigationBar()
-    }
-    
-    func setupNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        appearance.backgroundColor = UIColor.white
-        
-        navigationController.navigationBar.standardAppearance = appearance
-        navigationController.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
-    func setupBackButton(for viewController: UIViewController) {
-        let backImage = UIImage(named: "BackIcone")
-        
-        let backButton = UIButton(type: .custom)
-        backButton.setImage(backImage, for: .normal)
-        backButton.frame = CGRect(x: 0, y: 0, width: 20, height: 210)
-        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-
-        let barButton = UIBarButtonItem(customView: backButton)
-
-        viewController.navigationItem.leftBarButtonItem = barButton
-    }
-    
-    @objc func backButtonPressed() {
-        self.navigationController.popViewController(animated: true)
     }
     
     func start() {
-        showLoadCiew()
+        showLoadView()
     }
     
-    func showLoadCiew() {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadTracksViewController") as! LoadTracksViewController
+    func showLoadView() {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadTracksViewController") as? LoadTracksViewController else {
+            return
+        }
         let presenter = LoadTracksPresenter(view: viewController)
         viewController.presenter = presenter
       
@@ -62,11 +37,13 @@ class MainCoordinator: Coordinator {
         }
         
         navigationController.pushViewController(viewController, animated: true)
-        presenter.loadTracks()
+        presenter.startLoadTracks()
     }
     
     func showTrackListView(musicItems: [MusicItems]) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicLIstViewController") as! MusicLIstViewController
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MusicLIstViewController") as? MusicLIstViewController else {
+            return
+        }
         
         let presenter = MusicLIstPresenter(view: viewController, musicItems: musicItems)
         
@@ -82,7 +59,9 @@ class MainCoordinator: Coordinator {
     }
     
     func showPlayerView(musicItems: [MusicItems], musicId: Int16) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
+            return
+        }
         let presenter = PlayerViewPresenter(view: viewController, idPlayTrack: musicId, musicItems: musicItems)
         
         viewController.presenter = presenter

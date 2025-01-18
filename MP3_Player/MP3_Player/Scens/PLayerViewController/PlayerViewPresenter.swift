@@ -31,9 +31,9 @@ class PlayerViewPresenter {
         }
     }
     
-    var isPlaing: Bool = true{
+    var isPLaying: Bool = true{
         didSet {
-            self.isPlaing ? playTrack() : pauseTrack()
+            self.isPLaying ? playTrack() : pauseTrack()
         }
     }
 
@@ -54,13 +54,6 @@ class PlayerViewPresenter {
     
     func setupUI() {
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(playerDidFinishPlaying),
-            name: .AVPlayerItemDidPlayToEndTime,
-            object: avPlayerManager?.currentItem
-        )
-        
         self.view?.addTrackTimeSliderTargets()
         
         guard let music = musicsItems.first(where: {self.avPlayerManager?.getIdTrack() ?? self.idPLayTrack == $0.id}), let avPlayermanager = self.avPlayerManager else { return }
@@ -74,9 +67,19 @@ class PlayerViewPresenter {
         self.view?.configurTrackForwardButton(image: Const.nextButton)
         
         self.view?.configurTrackTimeSlider(value: 0)
+        configureNotificationPlayer()
         addTimeObserver()
         setUpTrackTime()
         
+    }
+    
+    func configureNotificationPlayer(){
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(playerDidFinishPlaying),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: avPlayerManager?.currentItem
+        )
     }
 
     func pauseTrack(){
@@ -103,7 +106,7 @@ class PlayerViewPresenter {
             
             // Проверяем, что musicURL существует
             guard let musicURLString = music.musicURL else {
-                print("Music URL is nil")
+                print("URL трека nil")
                 return
             }
             
@@ -113,18 +116,14 @@ class PlayerViewPresenter {
             // Проверяем существование файла
             if FileManager.default.fileExists(atPath: musicURL.path) {
                 print("Файл существует по пути: \(musicURL.path)")
-//                self.addTimeObserver()
                 self.avPlayerManager?.startTrack(url: musicURL, idTrack: self.idPLayTrack)
-                // Создаем AVPlayer и воспроизводим трек
-                print("Playing track: \(music.musicName ?? "Unknown") by \(music.author ?? "Unknown")")
+                print("Играет композиция: \(music.musicName ?? "Неизветсная") от \(music.author ?? "Неизветсного")")
             } else {
                 print("Файл не существует по пути: \(musicURL.path)")
             }
-//            self.view?.configurCoverImageView(image: UIImage(data: music.coverImage ?? Data()) ?? UIImage())
         }
         
         setupUI()
-//        self.view?.configurPlayTrackButton(image: Const.pauseButton)
     }
     
     func addTimeObserver() {
@@ -171,8 +170,3 @@ private extension PlayerViewPresenter {
         static let nextButton = UIImage(systemName: "forward.end") ?? UIImage()
     }
 }
-
-
-//Вот такой сохраняю /Users/databriz/Library/Developer/CoreSimulator/Devices/85B1AC55-9E5F-4F1A-A9DC-D4E7AC07DEAA/data/Containers/Bundle/Application/D5A3B290-45FB-4334-8B9D-6D3AD8B43CD6/MP3_Player.app/Musics/Метель - ДДТ.mp3
-
-//Вот такой достаю -  /Users/databriz/Library/Developer/CoreSimulator/Devices/85B1AC55-9E5F-4F1A-A9DC-D4E7AC07DEAA/data/Containers/Bundle/Application/D5A3B290-45FB-4334-8B9D-6D3AD8B43CD6/MP3_Player.app/Musics/Метель - ДДТ.mp3

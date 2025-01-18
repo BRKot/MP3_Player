@@ -28,9 +28,6 @@ class MusicLIstViewController: UIViewController {
     @IBAction func button(_ sender: Any) {
         self.reloadTableViewData()
     }
-    override func viewDidAppear(_ animated: Bool) {
-//        self.reloadTableViewData()
-    }
 }
 
 extension MusicLIstViewController: UITableViewDelegate, UITableViewDataSource{

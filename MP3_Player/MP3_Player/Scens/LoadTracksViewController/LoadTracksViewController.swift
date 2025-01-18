@@ -10,7 +10,6 @@ import UIKit
 
 
 protocol LoadTracksView{
-   func stopLoad()
 }
 
 class LoadTracksViewController: UIViewController {
@@ -23,8 +22,5 @@ class LoadTracksViewController: UIViewController {
 }
 
 extension LoadTracksViewController: LoadTracksView{
-    func stopLoad(){
-
-    }
 }
 
