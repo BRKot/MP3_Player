@@ -139,6 +139,23 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		B733F91F2D4124E10035B44B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B7CF83E52D395609005DA92A /* CoreDataManager.swift */,
+				B70232AF2D3BD13F0085864A /* AVPlayerManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B733F9202D4124F10035B44B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B7293A622D3A7D4B009837C9 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		B7FEF4F02D37716B003A9802 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +177,8 @@
 		B7FEF4FB2D37716B003A9802 /* MP3_Player */ = {
 			isa = PBXGroup;
 			children = (
+				B733F9202D4124F10035B44B /* Coordinators */,
+				B733F91F2D4124E10035B44B /* Managers */,
 				B733F9172D4107420035B44B /* Extension */,
 				B7293A502D3A2A8E009837C9 /* Cells */,
 				B7293A492D3A26A4009837C9 /* Scens */,
@@ -169,9 +188,6 @@
 				B7FEF5022D37716B003A9802 /* Main.storyboard */,
 				B7FEF5052D37716C003A9802 /* Assets.xcassets */,
 				B7FEF50A2D37716C003A9802 /* Info.plist */,
-				B7CF83E52D395609005DA92A /* CoreDataManager.swift */,
-				B7293A622D3A7D4B009837C9 /* MainCoordinator.swift */,
-				B70232AF2D3BD13F0085864A /* AVPlayerManager.swift */,
 			);
 			path = MP3_Player;
 			sourceTree = "<group>";

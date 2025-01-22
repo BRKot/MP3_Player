@@ -30,6 +30,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
+        
+#if DEBUG
+        // Удаление хранилища только в дебаг-режиме
+        if let storeURL = container.persistentStoreDescriptions.first?.url {
+            do {
+                // Уничтожаем существующее хранилище
+                try container.persistentStoreCoordinator.destroyPersistentStore(
+                    at: storeURL,
+                    type: .sqlite,
+                    options: nil
+                )
+                
+                // Удаляем связанные файлы
+                let fileManager = FileManager.default
+                try fileManager.removeItem(at: storeURL)
+                
+                // Удаляем вспомогательные файлы SQLite
+                let shmURL = storeURL.deletingPathExtension().appendingPathExtension("sqlite-shm")
+                let walURL = storeURL.deletingPathExtension().appendingPathExtension("sqlite-wal")
+                try? fileManager.removeItem(at: shmURL)
+                try? fileManager.removeItem(at: walURL)
+            } catch {
+                print("⚠️ Ошибка удаления хранилища: \(error)")
+            }
+        }
+#endif
+        
         container.loadPersistentStores { description, error in
             if let error{
                 print(error)
