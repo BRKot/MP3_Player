@@ -38,6 +38,7 @@ class PlayerViewPresenter {
         }
         
         self.view?.addTrackTimeSliderTargets()
+        self.view?.configureSwaps()
         self.view?.configurCoverImageView(image: UIImage(data: music.coverImage ?? Data()) ?? UIImage())
         self.view?.configurAuthorNameLabel(atributs: NSAttributedString(string: music.author ?? "",
                                                                         attributes: [.foregroundColor: UIColor.white]))
@@ -48,6 +49,7 @@ class PlayerViewPresenter {
         self.view?.configurTrackForwardButton(image: Const.nextButton)
         
         self.view?.configurTrackTimeSlider(value: avPlayerManager.getPartTrack())
+        
         addTimeObserver()
         setUpTrackTime()
     }

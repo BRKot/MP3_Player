@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DA3461D2-D075-4DC7-910C-F88D874BF05B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MP3_Player/Cells/TrackTableViewCell.swift"
@@ -81,6 +81,21 @@
                   endingLineNumber = "60"
                   offsetFromSymbolStart = "72">
                </Location>
+               <Location
+                  uuid = "DA3461D2-D075-4DC7-910C-F88D874BF05B - 56a8483f5a57087c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.TrackTableViewCell.startGif() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Cells/TrackTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "84">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -88,7 +103,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AAC8F954-1BCB-43C0-B0DB-2BE27F490FAF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MP3_Player/Cells/TrackTableViewCell.swift"
@@ -97,6 +112,70 @@
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "stopGif()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AAC8F954-1BCB-43C0-B0DB-2BE27F490FAF - cc45186e111e76db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.TrackTableViewCell.stopGif() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Cells/TrackTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "AAC8F954-1BCB-43C0-B0DB-2BE27F490FAF - cc45186e111e767e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.TrackTableViewCell.stopGif() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Cells/TrackTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0623883-6D41-4462-A586-47FDE9FF2A86"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "configureSwaps()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D763C00-0C2A-40A7-BB41-A741D4D7E4AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Scens/PLayerViewController/PlayerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "handleSwipe(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,19 +20,21 @@ protocol PlayerView: AnyObject{
     func configurTrackBackButton(image: UIImage)
     func configurPlayTrackButton(image: UIImage)
     func configurTrackForwardButton(image: UIImage)
+    
+    func configureSwaps()
 }
 
 class PlayerViewController: UIViewController {
     @IBOutlet var trackCoverUIImageView: UIImageView!
     
-    @IBOutlet var TrackNameLabel: UILabel!
-    @IBOutlet var AuthorNameLabel: UILabel!
+    @IBOutlet var trackNameLabel: UILabel!
+    @IBOutlet var authorNameLabel: UILabel!
     
     @IBOutlet var trackTimeSlider: UISlider!
     
-    @IBOutlet var TrackBackButton: UIButton!
+    @IBOutlet var trackBackButton: UIButton!
     @IBOutlet var playTrackButton: UIButton!
-    @IBOutlet var TrackForwardButton: UIButton!
+    @IBOutlet var trackForwardButton: UIButton!
     
     var presenter: PlayerViewPresenter?
     
@@ -69,9 +71,20 @@ class PlayerViewController: UIViewController {
         presenter?.isSliding = false
     }
     
-}
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+           switch gesture.direction {
+           case .left:
+               print("Свайп влево")
+               presenter?.playNextTrack()
+           case .right:
+               print("Свайп вправо")
+               presenter?.playBackTrack()
+           default:
+               break
+           }
+       }
     
-
+}
 
 extension PlayerViewController: PlayerView{
     
@@ -81,11 +94,11 @@ extension PlayerViewController: PlayerView{
     }
     
     func configurTrackNameLabel(atributs: NSAttributedString) {
-        self.TrackNameLabel.attributedText = atributs
+        self.trackNameLabel.attributedText = atributs
     }
     
     func configurAuthorNameLabel(atributs: NSAttributedString) {
-        self.AuthorNameLabel.attributedText = atributs
+        self.authorNameLabel.attributedText = atributs
     }
     
     func configurTrackTimeSlider(value: Float) {
@@ -98,17 +111,30 @@ extension PlayerViewController: PlayerView{
     }
     
     func configurTrackBackButton(image: UIImage) {
-        self.TrackBackButton.setImage(image, for: .normal)
-        self.TrackBackButton.tintColor = UIColor.white
+        self.trackBackButton.setImage(image, for: .normal)
+        self.trackBackButton.tintColor = UIColor.white
     }
     
     func configurPlayTrackButton(image: UIImage) {
-          self.playTrackButton.setImage(image, for: .normal)
-          self.playTrackButton.tintColor = UIColor.white
-      }
+        self.playTrackButton.setImage(image, for: .normal)
+        self.playTrackButton.tintColor = UIColor.white
+    }
     
     func configurTrackForwardButton(image: UIImage) {
-        self.TrackForwardButton.setImage(image, for: .normal)
-        self.TrackForwardButton.tintColor = UIColor.white
+        self.trackForwardButton.setImage(image, for: .normal)
+        self.trackForwardButton.tintColor = UIColor.white
+    }
+    
+    func configureSwaps(){
+        trackCoverUIImageView.isUserInteractionEnabled = true
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeRight.direction = .right
+        trackCoverUIImageView.addGestureRecognizer(swipeRight)
+        
+        // Свайп влево
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeLeft.direction = .left
+        trackCoverUIImageView.addGestureRecognizer(swipeLeft)
     }
 }
