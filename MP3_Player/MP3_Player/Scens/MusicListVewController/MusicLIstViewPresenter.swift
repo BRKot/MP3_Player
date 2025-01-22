@@ -35,9 +35,13 @@ class MusicLIstPresenter{
 
     func setupUI(){
         self.view?.setupTableView(reusIdentifier: Const.reuseIdentifier)
-        self.avPlayerManager?.addNextTrackHandler { [weak self] id in
-            print("В окне списка \(id)")
+        avPlayerManager?.addNextTrackHandler { [weak self] id in
+            self?.view?.configureCellWithCurrentTrack(idCell: id)
         }
+    }
+    
+    func getPlayingId(index: Int16) -> Bool{
+        return avPlayerManager?.getIdTrack() == index
     }
     
     func getEqualMusicItem(index: Int) -> MusicItems?{

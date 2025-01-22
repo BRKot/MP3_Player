@@ -17,6 +17,9 @@
 		B7293A552D3A2C0B009837C9 /* LoadTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A542D3A2C0B009837C9 /* LoadTracksViewController.swift */; };
 		B7293A572D3A2C19009837C9 /* LoadTracksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A562D3A2C19009837C9 /* LoadTracksPresenter.swift */; };
 		B7293A632D3A7D4B009837C9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7293A622D3A7D4B009837C9 /* MainCoordinator.swift */; };
+		B733F9192D4108070035B44B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733F9182D4108070035B44B /* UIImageExtension.swift */; };
+		B733F91C2D410A840035B44B /* dance_dog.gif in Resources */ = {isa = PBXBuildFile; fileRef = B733F91B2D410A840035B44B /* dance_dog.gif */; };
+		B733F91E2D410B0D0035B44B /* dance_cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = B733F91D2D410B0D0035B44B /* dance_cat.gif */; };
 		B7520E972D3AB2D500E463E6 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7520E962D3AB2D500E463E6 /* TrackTableViewCell.swift */; };
 		B7CF83E62D395609005DA92A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CF83E52D395609005DA92A /* CoreDataManager.swift */; };
 		B7FEF4FD2D37716B003A9802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEF4FC2D37716B003A9802 /* AppDelegate.swift */; };
@@ -38,6 +41,9 @@
 		B7293A542D3A2C0B009837C9 /* LoadTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTracksViewController.swift; sourceTree = "<group>"; };
 		B7293A562D3A2C19009837C9 /* LoadTracksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTracksPresenter.swift; sourceTree = "<group>"; };
 		B7293A622D3A7D4B009837C9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B733F9182D4108070035B44B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		B733F91B2D410A840035B44B /* dance_dog.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dance_dog.gif; sourceTree = "<group>"; };
+		B733F91D2D410B0D0035B44B /* dance_cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dance_cat.gif; sourceTree = "<group>"; };
 		B7520E962D3AB2D500E463E6 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		B7CF83E52D395609005DA92A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B7FEF4F92D37716B003A9802 /* MP3_Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MP3_Player.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,9 +116,27 @@
 		B7293A582D3A31E9009837C9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B733F91A2D410A740035B44B /* Gifs */,
 				B70232AD2D3BC2E20085864A /* Musics */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		B733F9172D4107420035B44B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B733F9182D4108070035B44B /* UIImageExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B733F91A2D410A740035B44B /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				B733F91D2D410B0D0035B44B /* dance_cat.gif */,
+				B733F91B2D410A840035B44B /* dance_dog.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		B7FEF4F02D37716B003A9802 = {
@@ -136,6 +160,7 @@
 		B7FEF4FB2D37716B003A9802 /* MP3_Player */ = {
 			isa = PBXGroup;
 			children = (
+				B733F9172D4107420035B44B /* Extension */,
 				B7293A502D3A2A8E009837C9 /* Cells */,
 				B7293A492D3A26A4009837C9 /* Scens */,
 				B7293A582D3A31E9009837C9 /* Assets */,
@@ -209,6 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B733F91C2D410A840035B44B /* dance_dog.gif in Resources */,
+				B733F91E2D410B0D0035B44B /* dance_cat.gif in Resources */,
 				B7FEF5062D37716C003A9802 /* Assets.xcassets in Resources */,
 				B7FEF5042D37716B003A9802 /* Main.storyboard in Resources */,
 				B70232AE2D3BC2E20085864A /* Musics in Resources */,
@@ -237,6 +264,7 @@
 				B7293A4F2D3A2716009837C9 /* MusicLIstViewPresenter.swift in Sources */,
 				B7520E972D3AB2D500E463E6 /* TrackTableViewCell.swift in Sources */,
 				B7FEF4FF2D37716B003A9802 /* SceneDelegate.swift in Sources */,
+				B733F9192D4108070035B44B /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

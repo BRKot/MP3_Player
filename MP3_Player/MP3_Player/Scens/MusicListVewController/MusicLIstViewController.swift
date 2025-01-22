@@ -11,6 +11,7 @@ import AVFoundation
 protocol MusicLIstView: AnyObject{
     func reloadTableViewData()
     func setupTableView(reusIdentifier: String)
+    func configureCellWithCurrentTrack(idCell: Int16)
 }
 
 class MusicLIstViewController: UIViewController {
@@ -22,7 +23,6 @@ class MusicLIstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.setupUI()
-        print("Завершили")
     }
     
     @IBAction func button(_ sender: Any) {
@@ -32,29 +32,30 @@ class MusicLIstViewController: UIViewController {
 
 extension MusicLIstViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return presenter?.numberCells ?? 0
+        return presenter?.numberCells ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let presenter = presenter else {
+            return UITableViewCell()
         }
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let presenter = presenter else {
-                return UITableViewCell()
-            }
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: presenter.reuseIdentifier, for: indexPath) as? TrackTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            guard let item = presenter.getEqualMusicItem(index: indexPath.row) else {
-                return UITableViewCell()
-            }
-            
-            cell.configureCell(idCell: item.id,
-                            coverImage: UIImage(data: item.coverImage ?? Data()) ?? UIImage(),
-                            trackName: item.musicName ?? "",
-                            authorName: item.author ?? "")
-            
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: presenter.reuseIdentifier, for: indexPath) as? TrackTableViewCell else {
+            return UITableViewCell()
         }
+        
+        guard let item = presenter.getEqualMusicItem(index: indexPath.row) else {
+            return UITableViewCell()
+        }
+        
+        cell.configureCell(idCell: item.id,
+                           coverImage: UIImage(data: item.coverImage ?? Data()) ?? UIImage(),
+                           trackName: item.musicName ?? "",
+                           authorName: item.author ?? "",
+                           isPlaying: presenter.getPlayingId(index: item.id))
+        
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell, let idCell = cell.getIdCell else {
@@ -65,6 +66,13 @@ extension MusicLIstViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 extension MusicLIstViewController: MusicLIstView{
+    func configureCellWithCurrentTrack(idCell: Int16) {
+        for cell in (self.tableView.visibleCells as? [TrackTableViewCell]) ?? []{
+            cell.stopGif()
+            if cell.getIdCell == idCell { cell.startGif()}
+        }
+    }
+    
     
     func setupTableView(reusIdentifier: String) {
         tableView.delegate = self

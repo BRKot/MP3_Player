@@ -20,5 +20,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44FBCB39-F774-4008-BD95-C5B659B21702"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Scens/MusicListVewController/MusicLIstViewPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getPlayingId(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA3461D2-D075-4DC7-910C-F88D874BF05B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Cells/TrackTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "startGif()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA3461D2-D075-4DC7-910C-F88D874BF05B - 56a8483f5a57087c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.TrackTableViewCell.startGif() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Cells/TrackTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "DA3461D2-D075-4DC7-910C-F88D874BF05B - 56a8483f5a57087c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MP3_Player.TrackTableViewCell.startGif() -&gt; ()"
+                  moduleName = "MP3_Player"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/databriz/Documents/GitProjects/MP3_Player/MP3_Player/MP3_Player/Cells/TrackTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAC8F954-1BCB-43C0-B0DB-2BE27F490FAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MP3_Player/Cells/TrackTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "stopGif()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
