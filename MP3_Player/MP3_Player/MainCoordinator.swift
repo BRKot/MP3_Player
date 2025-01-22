@@ -63,7 +63,7 @@ class MainCoordinator: Coordinator {
         guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
             return
         }
-        let presenter = PlayerViewPresenter(view: viewController, idPlayTrack: musicId, musicItems: musicItems)
+        let presenter = PlayerViewPresenter(view: viewController, musicItems: musicItems)
         
         viewController.presenter = presenter
         

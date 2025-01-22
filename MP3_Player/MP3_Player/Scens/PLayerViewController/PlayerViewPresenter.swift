@@ -7,48 +7,20 @@ class PlayerViewPresenter {
     var closeView: (()->Void)?
     
     weak private var view: PlayerView?
-    weak var avPlayerManager: AVPlayerManager?
+    unowned var avPlayerManager: AVPlayerManager
     
     var timeObserver: Any?
-
     var musicsItems: [MusicItems] = []
     
     
     var isSliding = false
-    var idPLayTrack: Int16 {
-        didSet {
-            // Проверяем, что массив не пуст
-            guard !musicsItems.isEmpty else {
-                return
-            }
-            // Находим минимальное и максимальное значение id в массиве
-            let minId = musicsItems.min(by: { $0.id < $1.id })?.id ?? 0
-            let maxId = musicsItems.max(by: { $0.id < $1.id })?.id ?? 0
-
-            // Ограничиваем значение idPLayTrack в пределах minId и maxId
-            if idPLayTrack > maxId {
-                idPLayTrack = minId
-            } else if idPLayTrack < minId {
-                idPLayTrack = maxId
-            }
-            playNextTrack()
-        }
-    }
-    var isPLaying: Bool = true{
-        didSet {
-            self.isPLaying ? playTrack() : pauseTrack()
-        }
-    }
-
+    
     init(view: PlayerView,
-         idPlayTrack: Int16,
          musicItems: [MusicItems],
          avPlayerManager: AVPlayerManager = AVPlayerManager.shared) {
         self.view = view
-        self.idPLayTrack = idPlayTrack
         self.musicsItems = musicItems
         self.avPlayerManager = avPlayerManager
-        
     }
     
     func onCloseView(){
@@ -57,111 +29,100 @@ class PlayerViewPresenter {
     
     func setupUI() {
         
-        self.view?.addTrackTimeSliderTargets()
+        guard let music =  getCurrentTrackItem()else{
+            return
+        }
         
-        guard let music = musicsItems.first(where: {self.avPlayerManager?.getIdTrack() ?? self.idPLayTrack == $0.id}), let avPlayermanager = self.avPlayerManager else { return }
+        avPlayerManager.addNextTrackHandler { [weak self] id in
+            self?.setupUIForNextTrack(idNewTrack: id)
+        }
+        
+        self.view?.addTrackTimeSliderTargets()
         self.view?.configurCoverImageView(image: UIImage(data: music.coverImage ?? Data()) ?? UIImage())
         self.view?.configurAuthorNameLabel(atributs: NSAttributedString(string: music.author ?? "",
-                                                                attributes: [.foregroundColor: UIColor.white]))
+                                                                        attributes: [.foregroundColor: UIColor.white]))
         self.view?.configurTrackNameLabel(atributs: NSAttributedString(string: music.musicName ?? "",
-                                                                attributes: [.foregroundColor: UIColor.white]))
-        self.view?.configurPlayTrackButton(image: avPlayermanager.isPlaying() ? Const.pauseButton : Const.playButton)
+                                                                       attributes: [.foregroundColor: UIColor.white]))
+        self.view?.configurPlayTrackButton(image: avPlayerManager.isPlaying() ? Const.pauseButton : Const.playButton)
         self.view?.configurTrackBackButton(image: Const.backButton)
         self.view?.configurTrackForwardButton(image: Const.nextButton)
         
-        self.view?.configurTrackTimeSlider(value: 0)
-        configureNotificationPlayer()
+        self.view?.configurTrackTimeSlider(value: avPlayerManager.getPartTrack())
         addTimeObserver()
         setUpTrackTime()
-        
     }
     
-    func configureNotificationPlayer(){
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(playerDidFinishPlaying),
-            name: .AVPlayerItemDidPlayToEndTime,
-            object: avPlayerManager?.currentItem
-        )
+    func setupUIForNextTrack(idNewTrack: Int16){
+        guard let music = musicsItems.first(where: {$0.id == idNewTrack}) else{
+            return
+        }
+        avPlayerManager.play()
+        self.view?.configurCoverImageView(image: UIImage(data: music.coverImage ?? Data()) ?? UIImage())
+        self.view?.configurAuthorNameLabel(atributs: NSAttributedString(string: music.author ?? "",
+                                                                        attributes: [.foregroundColor: UIColor.white]))
+        self.view?.configurTrackNameLabel(atributs: NSAttributedString(string: music.musicName ?? "",
+                                                                       attributes: [.foregroundColor: UIColor.white]))
+        self.view?.configurPlayTrackButton(image: avPlayerManager.isPlaying() ? Const.pauseButton : Const.playButton)
     }
-
+    
+    func getCurrentTrackItem()->MusicItems?{
+        let musicItem = self.musicsItems.first(where: {self.avPlayerManager.getIdTrack() == $0.id  })
+        
+        return musicItem
+    }
+    
+    func tupOnPlayOrStopButton(){
+        if avPlayerManager.isPlaying(){
+            pauseTrack()
+        }else{
+            playTrack()
+        }
+    }
+    
+    func playTrack() {
+        self.avPlayerManager.play()
+        self.view?.configurPlayTrackButton(image: Const.pauseButton)
+    }
+    
     func pauseTrack(){
-        self.avPlayerManager?.pause()
+        self.avPlayerManager.pause()
         self.view?.configurPlayTrackButton(image: Const.playButton)
     }
     
     func playNextTrack(){
-        self.avPlayerManager?.pause()
-        self.avPlayerManager?.replaceCurrentItem(with: nil)
-        playTrack()
+        self.avPlayerManager.playNextTrack()
     }
     
-    func playTrack() {
-        
-        if self.avPlayerManager?.currentItem != nil && self.idPLayTrack == self.avPlayerManager?.getIdTrack() {
-            self.avPlayerManager?.play()
-        }else{
-            
-            guard let music = musicsItems.first(where: { self.idPLayTrack == $0.id }) else {
-                print("Музыка с ID \(idPLayTrack) не найдена")
-                return
-            }
-            
-            // Проверяем, что musicURL существует
-            guard let musicURLString = music.musicURL else {
-                print("URL трека nil")
-                return
-            }
-            
-            // Преобразуем строку в URL
-            let musicURL = URL(fileURLWithPath: musicURLString)
-            
-            // Проверяем существование файла
-            if FileManager.default.fileExists(atPath: musicURL.path) {
-                print("Файл существует по пути: \(musicURL.path)")
-                self.avPlayerManager?.startTrack(url: musicURL, idTrack: self.idPLayTrack)
-                print("Играет композиция: \(music.musicName ?? "Неизветсная") от \(music.author ?? "Неизветсного")")
-            } else {
-                print("Файл не существует по пути: \(musicURL.path)")
-            }
-        }
-        
-        setupUI()
+    func playBackTrack(){
+        self.avPlayerManager.playBackTrack()
     }
     
     func addTimeObserver() {
         let interval = CMTime(seconds: 0.1, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        timeObserver = self.avPlayerManager?.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
+        timeObserver = self.avPlayerManager.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
             guard let self = self, !self.isSliding else { return }
-            let duration = self.avPlayerManager?.currentItem?.duration.seconds ?? 0
+            let duration = self.avPlayerManager.currentItem?.duration.seconds ?? 0
             let currentTime = time.seconds
             DispatchQueue.main.async {
                 self.view?.configurTrackTimeSlider(value: Float(currentTime / duration))
             }
         }
     }
-
+    
     func changeTrackTime(partFullTime: Double) {
-        guard let duration = avPlayerManager?.currentItem?.duration.seconds else { return }
+        guard let duration = avPlayerManager.currentItem?.duration.seconds else { return }
         let newTime = partFullTime * duration
         let seekTime = CMTime(seconds: newTime, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        avPlayerManager?.seek(to: seekTime)
+        avPlayerManager.seek(to: seekTime)
     }
     
     func setUpTrackTime(){
-        if avPlayerManager?.currentItem != nil {
-            if let currentTime = avPlayerManager?.currentTime() {
-                let currentSeconds = CMTimeGetSeconds(currentTime) // Конвертируем CMTime в секунды
-                let duration = self.avPlayerManager?.currentItem?.duration.seconds ?? 0
-                self.view?.configurTrackTimeSlider(value: Float(currentSeconds / duration))
-            } else {
-                print("Текущая позиция недоступна.")
-            }
+        if avPlayerManager.currentItem != nil {
+            let currentTime = avPlayerManager.currentTime()
+            let currentSeconds = CMTimeGetSeconds(currentTime) // Конвертируем CMTime в секунды
+            let duration = self.avPlayerManager.currentItem?.duration.seconds ?? 0
+            self.view?.configurTrackTimeSlider(value: Float(currentSeconds / duration))
         }
-    }
-    
-    @objc func playerDidFinishPlaying(note: NSNotification) {
-        self.idPLayTrack += 1
     }
 }
 

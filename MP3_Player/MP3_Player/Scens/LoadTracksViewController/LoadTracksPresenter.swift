@@ -28,7 +28,7 @@ class LoadTracksPresenter{
     }
     
     func startLoadTracks(){
-        guard let musics = coreDataItems(), musics.count > 0 else {
+        guard let musics = loadFromCoreDataItems(), musics.count > 0 else {
             if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 loadTracks(from: documentsDirectory){ tracks in
                     self.tracks = tracks
@@ -43,13 +43,37 @@ class LoadTracksPresenter{
     }
     
     func loadFinish(musics: [MusicItems]){
+        creatPlayList(musicItems: musics)
         wasLoad!(musics)
     }
     
-    func coreDataItems() -> [MusicItems]?{
+    func loadFromCoreDataItems() -> [MusicItems]?{
         let coreDataManager = CoreDataManager.shared
-
-        return coreDataManager.fetchMusics() ?? []
+        guard let musicItems = coreDataManager.fetchMusics(), !musicItems.isEmpty else {
+            return []
+        }
+        return musicItems
+    }
+    
+    func creatPlayList(musicItems: [MusicItems]?){
+        let avPlayer = AVPlayerManager.shared
+        var playList: [Int16: URL] = [:]
+        
+        for item in musicItems ?? [] {
+            if let musicURLString = item.musicURL{
+                let musicURL = URL(fileURLWithPath: musicURLString)
+                if FileManager.default.fileExists(atPath: musicURL.path) {
+                    print("Файл существует по пути: \(musicURL.path)")
+                    playList[item.id] = musicURL
+                    print("Добавлена в плейлист композиция: \(item.musicName ?? "Неизветсная") от \(item.author ?? "Неизветсного")")
+                } else {
+                    print("Файл не существует по пути: \(musicURL.path)")
+                }
+            }else{
+                print("URL трека nil")
+            }
+        }
+        avPlayer.creatPlayList(playList: playList)
     }
     
     func saveToCoreDataFiles() {

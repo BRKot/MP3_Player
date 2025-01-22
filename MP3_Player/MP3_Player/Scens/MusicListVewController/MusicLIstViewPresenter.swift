@@ -15,6 +15,7 @@ class MusicLIstPresenter{
     
     weak private var view: MusicLIstView?
     private var musicItems: [MusicItems]
+    private var avPlayerManager: AVPlayerManager?
     
     var numberCells: Int{
         return musicItems.count
@@ -25,13 +26,18 @@ class MusicLIstPresenter{
     }
     
     init(view: MusicLIstView,
-         musicItems: [MusicItems]) {
+         musicItems: [MusicItems],
+         avPlayerManager: AVPlayerManager = AVPlayerManager.shared) {
         self.view = view
         self.musicItems = musicItems
+        self.avPlayerManager = avPlayerManager
     }
 
     func setupUI(){
         self.view?.setupTableView(reusIdentifier: Const.reuseIdentifier)
+        self.avPlayerManager?.addNextTrackHandler { [weak self] id in
+            print("В окне списка \(id)")
+        }
     }
     
     func getEqualMusicItem(index: Int) -> MusicItems?{
@@ -40,6 +46,19 @@ class MusicLIstPresenter{
     }
     
     func selectMusic(id: Int16){
+        if self.avPlayerManager?.isPlaying() ?? false{
+            if self.avPlayerManager?.getIdTrack() == id{
+                self.avPlayerManager?.play()
+            }else{
+                self.avPlayerManager?.playTrack(id: id)
+            }
+        }else{
+            if self.avPlayerManager?.getIdTrack() == id{
+                
+            }else{
+                self.avPlayerManager?.playTrack(id: id)
+            }
+        }
         onselectedCell!(self.musicItems, id)
     }
 }

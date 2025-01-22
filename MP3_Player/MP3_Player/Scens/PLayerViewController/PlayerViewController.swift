@@ -40,13 +40,9 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
         presenter?.setupUI()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        presenter?.playTrack()
-    }
-    
+
     @IBAction func onPlayButtonTuch(_ sender: Any) {
-        presenter?.isPLaying = !(presenter?.isPLaying ?? false)
+        presenter?.tupOnPlayOrStopButton()
     }
     
     @IBAction func changeValueSlider(_ sender: Any) {
@@ -54,11 +50,11 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func onTupNextTrack(_ sender: Any) {
-        presenter?.idPLayTrack += 1
+        presenter?.playNextTrack()
     }
     
     @IBAction func onTupBackTrack(_ sender: Any) {
-        presenter?.idPLayTrack += -1
+        presenter?.playBackTrack()
     }
     
     @IBAction func closeButtonYup(_ sender: Any) {
